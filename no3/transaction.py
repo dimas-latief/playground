@@ -17,7 +17,7 @@ class Transaction():
             self.discount_rules = 0
         else: 
             self.discount_rules = discount_rules
-        print(f"New transaction is in process, with total price of ${total_price} and Categories in {shop_category}")
+        print("New transaction is in process, with total price of ${} and Categories in {}".format(total_price, shop_category))
 
     def total_price_deduction_rules(self):
         '''
@@ -33,7 +33,13 @@ class Transaction():
         '''
         This function will tells how much should the customer pay
         No Return
+        params:
+            1. discount_rate --> calculate the percentage discount
+            2. total_payable --> how much customer need to pay
+
         Print: will print the info of the total after price deduction and discount if available
         '''
         self.total_price_deduction_rules()
-        print(f"Total Payable \nTotal Purchase ${self.total_price} - Total Deduction ${self.total_price_deduction} and with discount rate { self.discount_rules * 100 if self.discount_rules < 1 else 0 }% \nSo Total Payable = ${(self.total_price - self.total_price_deduction) - ((self.total_price - self.total_price_deduction) * self.discount_rules)}")
+        discount_rate = self.discount_rules * 100 if self.discount_rules < 1 else 0
+        total_payable = (self.total_price - self.total_price_deduction) - ((self.total_price - self.total_price_deduction) * self.discount_rules)
+        print("Total Payable \nTotal Purchase ${} - Total Deduction ${} and with discount rate {}% \nSo Total Payable = ${}".format(self.total_price, self.total_price_deduction, discount_rate, total_payable))
