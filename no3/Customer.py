@@ -15,3 +15,14 @@ class Customer():
         if (self.group not in list_group):
             raise Exception('I am sorry, the group is not in the list.')
 
+    def check_discount_rules(self):
+        '''every group have different discount'''
+        if self.group == "employee":
+            return 0.3
+        elif self.group == "affiliate":
+            return 0.1
+        elif self.group == "customer" and self.created_since_in_years >= 2:
+            return 0.05
+        else:
+            return 1
+
