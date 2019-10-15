@@ -1,6 +1,8 @@
 import math
 class Transaction():
-    '''this is every new transaction that customer will have'''
+    '''
+    This is every new transaction that customer will have
+    '''
     def __init__(self, total_price, discount_rules = 0, shop_category = "Non Groceries"):
         self.total_price = total_price
         self.shop_category = shop_category
@@ -10,3 +12,13 @@ class Transaction():
         else: 
             self.discount_rules = discount_rules
         print(f"New transaction is in process, with total price of ${total_price} and Categories in {shop_category}")
+
+    def total_price_deduction_rules(self):
+        '''
+        For every $100 got deduction of $5 dollar
+        example if shop $990 then will have $45 price deduction
+        Param: self.total_price
+        return: self.total_price_deduction
+        '''
+        self.total_price_deduction = math.floor(self.total_price/100) * 5
+        return self.total_price_deduction
