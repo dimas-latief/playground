@@ -14,6 +14,7 @@ def load(a):
     load function
     params: what object we want to get, in this case is text dict object
     return: string type format
+    Big(O) analysis: O(n) --> Runtime grows directly in proportion to n.
     In here n is the lenght of the dictionary
     '''
     new_form = "" # init empty string
