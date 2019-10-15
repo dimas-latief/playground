@@ -28,3 +28,12 @@ class Transaction():
         '''
         self.total_price_deduction = math.floor(self.total_price/100) * 5
         return self.total_price_deduction
+
+    def total_payable(self):
+        '''
+        This function will tells how much should the customer pay
+        No Return
+        Print: will print the info of the total after price deduction and discount if available
+        '''
+        self.total_price_deduction_rules()
+        print(f"Total Payable \nTotal Purchase ${self.total_price} - Total Deduction ${self.total_price_deduction} and with discount rate { self.discount_rules * 100 if self.discount_rules < 1 else 0 }% \nSo Total Payable = ${(self.total_price - self.total_price_deduction) - ((self.total_price - self.total_price_deduction) * self.discount_rules)}")
