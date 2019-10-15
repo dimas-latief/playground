@@ -2,6 +2,12 @@ import math
 class Transaction():
     '''
     This is every new transaction that customer will have
+    params:
+        1. total_price -> total shop in $
+        2. discount_rules -> in per 100 (float)
+        3. shop_category -> Non Groceries / Groceries
+    return: No
+    Print: will print information of the object created
     '''
     def __init__(self, total_price, discount_rules = 0, shop_category = "Non Groceries"):
         self.total_price = total_price
